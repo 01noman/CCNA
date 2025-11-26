@@ -1,0 +1,67 @@
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip dhcp ?
+  excluded-address  Prevent DHCP from assigning certain addresses
+  pool              Configure DHCP address pools
+  relay             DHCP relay agent parameters
+Router(config)#ip dhcp pool
+% Incomplete command.
+Router(config)#ip dhcp pool Lan-2
+Router(dhcp-config)#?
+  default-router  Default routers
+  dns-server      Set name server
+  domain-name     Domain name
+  exit            Exit from DHCP pool configuration mode
+  network         Network number and mask
+  no              Negate a command or set its defaults
+  option          Raw DHCP options
+Router(dhcp-config)#default-router 192.168.1.1
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#network 192.168.1.0 255.255.255.0
+Router(dhcp-config)#
+Router(dhcp-config)#
+Router(dhcp-config)#ip dhcp excluded-address ?
+% Unrecognized command
+Router(dhcp-config)#ip dhcp excluded-address 
+                    ^
+% Invalid input detected at '^' marker.
+	
+Router(dhcp-config)#exit
+Router(config)#ip dhcp excluded-address 
+% Incomplete command.
+Router(config)#ip dhcp excluded-address ?
+  A.B.C.D  Low IP address
+Router(config)#ip dhcp excluded-address 192.168.100 ?
+% Unrecognized command
+Router(config)#ip dhcp excluded-address 192.168.1.100
+Router(config)#?
+Configure commands:
+  aaa                Authentication, Authorization and Accounting.
+  access-list        Add an access list entry
+  banner             Define a login banner
+  bba-group          Configure BBA Group
+  boot               Modify system boot parameters
+  cdp                Global CDP configuration subcommands
+  class-map          Configure Class Map
+  clock              Configure time-of-day clock
+  config-register    Define the configuration register
+  crypto             Encryption module
+  default            Set a command to its defaults
+  do                 To run exec commands in config mode
+  dot11              IEEE 802.11 config commands
+  enable             Modify enable password parameters
+  end                Exit from configure mode
+  exit               Exit from configure mode
+  flow               Global Flow configuration subcommands
+  hostname           Set system's network name
+  interface          Select an interface to configure
+  ip                 Global IP configuration subcommands
+  ipv6               Global IPv6 configuration commands
+
+Router(config)#ip dhcp excluded-address 192.168.1.100 ?
+  A.B.C.D  High IP address
+  <cr>
+Router(config)#ip dhcp excluded-address 192.168.1.100 192.168.1.150
+Router(config)#ip dhcp excluded-address 192.168.1.2 192.168.1.99
+Router(config)#

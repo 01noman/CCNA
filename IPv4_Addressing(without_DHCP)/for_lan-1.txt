@@ -1,0 +1,37 @@
+Router>enable
+Router#ip dhcp ?
+% Unrecognized command
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip dhcp ?
+  excluded-address  Prevent DHCP from assigning certain addresses
+  pool              Configure DHCP address pools
+  relay             DHCP relay agent parameters
+Router(config)#ip dhcp pool LAN-1
+Router(dhcp-config)#?
+  default-router  Default routers
+  dns-server      Set name server
+  domain-name     Domain name
+  exit            Exit from DHCP pool configuration mode
+  network         Network number and mask
+  no              Negate a command or set its defaults
+  option          Raw DHCP options
+Router(dhcp-config)#default-router 192.168.0.1
+Router(dhcp-config)#network 192.168.0.0
+% Incomplete command.
+Router(dhcp-config)#network 192.168.0.0 255.255.255.0
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#excluded-address
+                      ^
+% Invalid input detected at '^' marker.
+	
+Router(dhcp-config)#exit
+Router(config)#ip dhcp excluded-address?
+excluded-address  
+Router(config)#ip dhcp excluded-address 192.168.0.2?
+A.B.C.D  
+Router(config)#ip dhcp excluded-address 192.168.0.2 ?
+  A.B.C.D  High IP address
+  <cr>
+Router(config)#ip dhcp excluded-address 192.168.0.2 192.168.0.99
+Router(config)#
