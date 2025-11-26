@@ -3,7 +3,7 @@
 ### Objectives:
 - Set the router hostname to "R1"
 - Set enable and console password as "networkhacks"
-- Create usernames "admin" and "numan". Passwords are "CCNA" and "numan123" respectively
+- Create usernames "admin" and "noman". Passwords are "CCNA" and "noman123" respectively
 - All the passwords should be stored as encrypted in the configuration files
 - Set the enable secrets as "NetworkHacks"
 - Configuration line console so that during console login local user password authentication required
