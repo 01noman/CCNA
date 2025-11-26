@@ -1,0 +1,74 @@
+1. Host Name
+
+2. Console Password
+
+3. Enable Password
+
+4. Enable Secret
+
+5. Password Encryption
+
+6. Configuration Save
+
+7. Router restart
+
+8. Configuration Erase
+
+Would you like to enter the initial configuration dialog? [yes/no]: no
+
+
+Press RETURN to get started!
+
+
+
+Router>                                                                                                                                        User Execution mode
+
+Router>enable 
+Router#                                                                                                                                        Privilege Execution Mode
+
+Router#show running-config                                                                                                                     Output From Ram(show ram content)
+Router#show startup-config                                                                                                                     Output from NVRM
+Router#show flash:                                                                                                                             Output From flash
+
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#                                                                                                                                Global Configuration Mode
+
+Router(config)#hostname Dhaka-North
+Dhaka-North(config)#                                                                                                                           Change Hostname
+
+Dhaka-North(config)#line con 0          
+Dhaka-North(config-line)#                                                                                                                      Sub Configuration Mode
+
+Dhaka-North(config)#line con 0
+Dhaka-North(config-line)#password 123                                                                                                          Set Console Post Password
+Dhaka-North(config-line)#login
+
+Dhaka-North(config-line)#exit
+Dhaka-North(config)#
+Dhaka-North(config)#enable password 456
+Dhaka-North(config)#
+
+Dhaka-North#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Dhaka-North(config)#enable secret asd
+Dhaka-North(config)#
+
+Dhaka-North#config terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Dhaka-North(config)#service password-encryption
+Dhaka-North(config)#do show running-config
+
+Dhaka-North#write memory                                                                                                                        write NVRAM from RAM
+Building configuration...
+[OK]
+Dhaka-North#write erase                                                                                                                         Erase all data from NVRAM
+
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#banner motd c Login Restricted c
+Router(config)#line con 0	
+Router(config-line)#motd-banner
+Router(config-line)#
+Router#
