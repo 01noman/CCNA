@@ -32,5 +32,5 @@ This exercise strengthens understanding of basic router interface configuration 
 Use Cisco Packet Tracer lab Overview
 
 <p align="center">
-  <img src="Cisco Packet Tracer - C__Users_Noman_Desktop_All_CCNA_Basic Router Configuration_test2.pkt 11_26_2025 11_08_49 PM.png" width="800" />
+  <img src="Screenshot 2025-11-27 004606.png" width="800" />
 </p>
