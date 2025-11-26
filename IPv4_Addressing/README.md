@@ -26,6 +26,7 @@ This exercise strengthens understanding of basic router interface configuration 
 ### Topology:
 - Router
 - Switch
+- DHCP Server
 - PC/Laptop
 
 ### Notes:
