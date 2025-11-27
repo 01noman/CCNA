@@ -29,7 +29,7 @@ This configuration ensures structured IP address management, controlled allocati
 - PC/Laptop
 
 ### Notes:
-Use Cisco Packet Tracer lab Overview
+Cisco Packet Tracer lab Overview
 
 <p align="center">
   <img src="Screenshot 2025-11-27 012739.png" width="800" />
