@@ -1,5 +1,5 @@
 
-## Basic Router Configuration
+## IPv4 Addressing Practice
 
 ### Objectives:
 - Set Router and switches hostname as R1 and sw1 and sw2
