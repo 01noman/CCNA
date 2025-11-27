@@ -27,5 +27,5 @@
 Cisco Packet Tracer lab Overview
 
 <p align="center">
-  <img src="Screenshot 2025-11-27 012739.png" width="800" />
+  <img src="Screenshot 2025-11-27 120535.png" width="800" />
 </p>
