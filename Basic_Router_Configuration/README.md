@@ -15,7 +15,7 @@
 - PC/Laptop
 
 ### Notes:
-Use Cisco Packet Tracer lab Overview
+Cisco Packet Tracer lab Overview
 
 <p align="center">
   <img src="Cisco Packet Tracer - C__Users_Noman_Desktop_All_CCNA_Basic Router Configuration_test2.pkt 11_26_2025 11_08_49 PM.png" width="800" />
