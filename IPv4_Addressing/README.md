@@ -30,7 +30,7 @@ This exercise strengthens understanding of basic router interface configuration 
 - PC/Laptop
 
 ### Notes:
-Use Cisco Packet Tracer lab Overview
+Cisco Packet Tracer lab Overview
 
 <p align="center">
   <img src="Screenshot 2025-11-27 004606.png" width="800" />
