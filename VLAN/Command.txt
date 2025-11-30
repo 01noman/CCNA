@@ -1,0 +1,44 @@
+Router>enable
+Router#interface GigabitEthernet0/0
+                 ^
+% Invalid input detected at '^' marker.
+	
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface GigabitEthernet0/0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#ip address 192.168.0.1
+% Incomplete command.
+Router(config-if)#ip address 192.168.0.1 255.255.255.0
+Router(config-if)#interface GigabitEthernet0/1
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+Router(config-if)#exit
+Router(config)#ip dhcp pool Management-LAN
+Router(dhcp-config)#?
+  default-router  Default routers
+  dns-server      Set name server
+  domain-name     Domain name
+  exit            Exit from DHCP pool configuration mode
+  network         Network number and mask
+  no              Negate a command or set its defaults
+  option          Raw DHCP options
+Router(dhcp-config)#
+Router(dhcp-config)#default-router 192.168.1.1
+Router(dhcp-config)#network 192.168.1.0 255.255.255.0
+Router(dhcp-config)#dns-server 8.8.8.8
+Router(dhcp-config)#exit
+Router(config)#ip dhcp excluded-address 192.168.1.2 192.168.1.10
+Router(config)#
