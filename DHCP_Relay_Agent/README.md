@@ -32,3 +32,11 @@ Cisco Packet Tracer lab Overview
 <p align="center">
   <img src="Screenshot 2025-12-01 124310.png" width="800" />
 </p>
+
+<p align="center">
+  <img src="dhcp_ip_confi.png" width="800" />
+</p>
+
+<p align="center">
+  <img src="dhcp_services.png" width="800" />
+</p>
