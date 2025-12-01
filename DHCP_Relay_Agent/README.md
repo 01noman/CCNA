@@ -38,5 +38,5 @@ Cisco Packet Tracer lab Overview
 </p>
 
 <p align="center">
-  <img src="dhcp_services.png" width="800" />
+  <img src="services.png" width="800" />
 </p>
