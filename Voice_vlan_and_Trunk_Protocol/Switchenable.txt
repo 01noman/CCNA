@@ -1,0 +1,47 @@
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface f0/24
+Switch(config-if)#switchport mode trunk
+
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/24, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/24, changed state to up
+
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#
+
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface g0/1
+Switch(config-if)#switchport mode trunk
+
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+Switch(config-if)#interface g0/1
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#
+
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface f0/1
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 10
+% Access VLAN does not exist. Creating vlan 10
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#interface f0/2
+Switch(config-if)#switchport mode access
+Switch(config-if)#switchport access vlan 20
+% Access VLAN does not exist. Creating vlan 20
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#
