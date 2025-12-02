@@ -1,0 +1,237 @@
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname R1
+R1(config)#do show running-config
+Building configuration...
+
+Current configuration : 604 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R1
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO1941/K9 sn FTX1524Q666-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+R1(config)#enable secrets CCNA
+                        ^
+% Invalid input detected at '^' marker.
+	
+R1(config)#enable secret CCNA
+R1(config)#^Z
+R1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+R1#
+R1>enable
+Password: 
+R1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#interface g0/0
+R1(config-if)#no shutdown
+
+R1(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+R1(config)#interface GigabitEthernet 0/0.2
+R1(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.2, changed state to up
+1(config-subif)#
+R1(config-subif)#encapsulation dot1Q 2
+R1(config-subif)#ip address 192.168.2.1 255.255.255.0
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#exit
+R1(config)#interface GigabitEthernet 0/0.3
+R1(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.3, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.3, changed state to up
+
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#encapsulation dot1Q 3
+R1(config-subif)#ip address 10.255.255.254 255.0.0.0
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#interface GigabitEthernet 0/0.4 
+R1(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.4, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.4, changed state to up
+
+R1(config-subif)#encapsulation dot1Q 4
+R1(config-subif)#ip address 192.168.4.1 255.255.255.0
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#exit
+R1(config)#interface GigabitEthernet 0/0.5 
+R1(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.5, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.5, changed state to up
+
+R1(config-subif)#encapsulation dot1Q 5
+R1(config-subif)#ip address 192.168.5.1 255.255.255.0
+R1(config-subif)#
+1(config-subif)#interface g0/1
+R1(config-if)#no shutdown
+R1(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+R1(config-if)#ip address 8.8.8.1 255.0.0.0
+R1(config-if)#
+R1(config-if)#
+R1>enable
+Password: 
+R1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#interface g0/0.2
+R1(config-subif)#description To-Sales-LAN
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#interface g0/0.3
+R1(config-subif)#description TO-IT-LAN
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#interface g0/0.4
+R1(config-subif)#description TO-HR-LAN
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#interface g0/0.5
+R1(config-subif)#description TO-Phone-LAN
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#interface g0/1
+R1(config-if)#description TO-DHCP-Server
+R1(config-if)#
+R1>enable
+Password: 
+R1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#interface g0/0.2
+R1(config-subif)#ip helper-address 8.8.8.8
+R1(config-subif)#
+R1(config-subif)#
+R1(config-subif)#exit
+R1(config)#ip dhcp pool HR-LAN
+R1(dhcp-config)#default-router 192.168.4.1
+R1(dhcp-config)#
+R1(dhcp-config)#network 192.168.4.0 255.255.255.0
+R1(dhcp-config)#
+R1(dhcp-config)#dns-server 8.8.8.8
+R1(dhcp-config)#
+R1(dhcp-config)#
+R1(dhcp-config)#
+R1(dhcp-config)#exit
+R1(config)#ip dhcp pool Phone-LAN
+R1(dhcp-config)#default-router 192.168.5.1
+R1(dhcp-config)#nertwork 192.168.5.0 255.255.255.0
+                  ^
+% Invalid input detected at '^' marker.
+	
+R1(dhcp-config)#network 192.168.5.0 255.255.255.0
+R1(dhcp-config)#dns-server 8.8.8.8
+R1(dhcp-config)#
+R1(dhcp-config)#
+R1(dhcp-config)#
+R1(dhcp-config)#
+R1(dhcp-config)#exit
+R1(config)#ip dhcp excluded-address 192.168.4.0 192.168.4.10
+R1(config)#
+R1(config)#
+R1(config)#ip dhcp excludded-address 192.168.5.0 192.168.5.10
+                         ^
+% Invalid input detected at '^' marker.
+	
+R1(config)#ip dhcp excluded-address 192.168.5.0 192.168.5.10
+R1(config)#
+R1(config)#
+R1(config)#
+R1>enable
+Password: 
+R1#show ip dhcp bonding
+                 ^
+% Invalid input detected at '^' marker.
+	
+R1#show ip dhcp binding
+IP address       Client-ID/              Lease expiration        Type
+                 Hardware address
+192.168.4.11     0090.2191.B037           --                     Automatic
+192.168.4.12     0001.C7E3.BDD3           --                     Automatic
+192.168.5.2      00E0.F7C6.E5BC           --                     Automatic
+192.168.5.11     00E0.A310.C2C2           --                     Automatic
+R1#

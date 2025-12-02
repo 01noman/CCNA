@@ -1,0 +1,70 @@
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#hostname SW1
+SW1(config)#enable secret CCNA
+SW1(config)#^Z
+SW1#
+%SYS-5-CONFIG_I: Configured from console by console
+SW1>enable
+Password: 
+SW1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW1(config)#vlan 2
+SW1(config-vlan)#name Sales-LAN
+SW1(config-vlan)#vlan 3
+SW1(config-vlan)#name IT-LAN
+SW1(config-vlan)#vlan 4
+SW1(config-vlan)#name HR-LAN
+SW1(config-vlan)#vlan 5
+SW1(config-vlan)#name Phone-LAN
+SW1(config-vlan)#
+SW1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW1(config)#interface range f0/1-2
+SW1(config-if-range)#switchport mode access
+SW1(config-if-range)#switchport access vlan 2
+SW1(config-if-range)#
+SW1(config-if-range)#
+SW1(config-if-range)#interface f0/1
+SW1(config-if)#switchport voice vlan 5
+SW1(config-if)#
+SW1(config-if)#^Z
+SW1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+SW1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW1(config)#interface f0/3
+SW1(config-if)#switchport mode access
+SW1(config-if)#switchport access vlan 3
+SW1(config-if)#
+SW1(config-if)#
+SW1(config-if)#exit
+SW1(config)#interface range g0/1-2
+SW1(config-if-range)#switchport mode trunk
+
+SW1(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+SW1(config-if-range)#switchport mode trunk
+SW1(config-if-range)#
+W1(config-if-range)#
+SW1(config-if-range)#exit
+SW1(config)#interface g0/1
+SW1(config-if)#switchport trunk allowed vlan 2,3,4,5
+SW1(config-if)#
+SW1(config-if)#
+SW1(config-if)#
+SW1(config-if)#
+SW1(config-if)#interface g0/2
+SW1(config-if)#switchport trunk allowed 3,4,5
+                                        ^
+% Invalid input detected at '^' marker.
+	
+SW1(config-if)#switchport trunk allowed vlan 3,4,5
+SW1(config-if)#
+SW1(config-if)#
+SW1(config-if)#switchport trunk allowed except vlan 3(optional)
