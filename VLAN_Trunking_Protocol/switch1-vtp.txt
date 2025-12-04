@@ -1,0 +1,181 @@
+hostname SW2
+enable secret CCNA 
+
+vlan 10
+ name Sales-LAN
+vlan 20
+ name IT-LAN
+vlan 30
+ name HR-LAN
+vlan 40
+ name PHONE-LAN
+vlan 50
+ name Management-LAN
+vlan 60
+ name Marketing-LAN
+vlan 70
+ name RND-LAN
+
+SW1#show vtp status
+VTP Version capable             : 1 to 2
+VTP version running             : 1
+VTP Domain Name                 : 
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : 0060.5CE3.2700
+Configuration last modified by 0.0.0.0 at 3-1-93 00:08:05
+Local updater ID is 0.0.0.0 (no valid interface found)
+
+Feature VLAN : 
+--------------
+VTP Operating Mode                : Server
+Maximum VLANs supported locally   : 255
+Number of existing VLANs          : 12
+Configuration Revision            : 14
+MD5 digest                        : 0x09 0x8A 0xD2 0xB7 0x85 0x18 0xAB 0xF5 
+                                    0xD3 0xB5 0xC3 0x80 0xF6 0xFD 0x3F 0x8F 
+SW1#
+SW1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW1(config)#vtp mode ?
+  client       Set the device to client mode.
+  server       Set the device to server mode.
+  transparent  Set the device to transparent mode.
+SW1(config)#vtp version 2
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#vtp domain?
+domain  
+SW1(config)#vtp domain ?
+  WORD  The ascii name for the VTP administrative domain.
+SW1(config)#vtp domain nomanisp.net
+Changing VTP domain name from NULL to nomanisp.net
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#vtp password cisco
+Setting device VLAN database password to cisco
+SW1(config)#
+SW1(config)#
+SW1(config)#exit
+SW1#
+%SYS-5-CONFIG_I: Configured from console by console
+
+SW1#show vtp status
+VTP Version capable             : 1 to 2
+VTP version running             : 2
+VTP Domain Name                 : nomanisp.net
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : 0060.5CE3.2700
+Configuration last modified by 0.0.0.0 at 3-1-93 00:23:48
+Local updater ID is 0.0.0.0 (no valid interface found)
+
+Feature VLAN : 
+--------------
+VTP Operating Mode                : Server
+Maximum VLANs supported locally   : 255
+Number of existing VLANs          : 12
+Configuration Revision            : 0
+MD5 digest                        : 0x46 0x82 0xDB 0x5F 0x24 0x4B 0xEC 0x45 
+                                    0x72 0x96 0x61 0x97 0x17 0x71 0x4D 0x2D 
+SW1#
+SW1>enable
+SW1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+SW1(config)#
+SW1(config)#
+SW1(config)#
+SW1(config)#interface g0/1
+SW1(config-if)#switchport mode trunk
+
+SW1(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+SW1(config-if)#
+SW1(config-if)#
+SW1(config-if)#exit
+SW1(config)#vlan 80
+SW1(config-vlan)#nmae Proc-LAN
+                  ^
+% Invalid input detected at '^' marker.
+	
+SW1(config-vlan)#
+SW1(config-vlan)#
+SW1(config-vlan)#name Proc-LAN
+SW1(config-vlan)#
+SW1(config)#do show vtp status
+VTP Version capable             : 1 to 2
+VTP version running             : 2
+VTP Domain Name                 : nomanisp.net
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : 0060.5CE3.2700
+Configuration last modified by 0.0.0.0 at 3-1-93 01:12:02
+Local updater ID is 0.0.0.0 (no valid interface found)
+
+Feature VLAN : 
+--------------
+VTP Operating Mode                : Server
+Maximum VLANs supported locally   : 255
+Number of existing VLANs          : 13
+Configuration Revision            : 2
+MD5 digest                        : 0x22 0xBB 0xC2 0xED 0x28 0xF6 0x12 0xB3 
+                                    0x30 0x40 0xD7 0x8A 0xF6 0xC0 0x5A 0xAD 
+SW1(config)# 
+SW1(config)#no vlan 80
+SW1(config)#
+SW1(config)#
+SW1(config)#do show vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/11, Fa0/12
+                                                Fa0/13, Fa0/14, Fa0/15, Fa0/16
+                                                Fa0/17, Fa0/18, Fa0/19, Fa0/20
+                                                Fa0/21, Fa0/22, Fa0/23, Fa0/24
+                                                Gig0/2
+10   Sales-LAN                        active    
+20   IT-LAN                           active    
+30   HR-LAN                           active    
+40   PHONE-LAN                        active    
+50   Management-LAN                   active    
+60   Marketing-LAN                    active    
+70   RND-LAN                          active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0
+10   enet  100010     1500  -      -      -        -    -        0      0
+20   enet  100020     1500  -      -      -        -    -        0      0
+30   enet  100030     1500  -      -      -        -    -        0      0
+40   enet  100040     1500  -      -      -        -    -        0      0
+50   enet  100050     1500  -      -      -        -    -        0      0
+60   enet  100060     1500  -      -      -        -    -        0      0
+70   enet  100070     1500  -      -      -        -    -        0      0
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------
+SW1(config)# 

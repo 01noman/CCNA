@@ -1,0 +1,44 @@
+Switch>
+Switch>enable
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#
+Switch(config)#
+Switch(config)#interface g0/1
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#
+Switch(config-if)#
+witch(config-if)#
+Switch(config-if)#interface g0/2
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#switchport mode trunk
+
+Switch(config-if)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/2, changed state to up
+
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#
+Switch(config-if)#exit
+Switch(config)#hostname SW3
+SW3(config)#
+SW3(config)#vtp version 2
+SW3(config)#
+SW3(config)#
+SW3(config)#vtp mode client
+Setting device to VTP CLIENT mode.
+SW3(config)#
+SW3(config)#
+SW3(config)#vtp domain nomanisp.net
+Domain name already set to nomanisp.net.
+SW3(config)#
+SW3(config)#
+SW3(config)#
+SW3(config)#vtp password cisco
+Setting device VLAN database password to cisco
+SW3(config)#
+SW3(config)#

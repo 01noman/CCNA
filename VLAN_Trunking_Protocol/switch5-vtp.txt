@@ -1,0 +1,41 @@
+Switch(config)#interface g0/1
+Switch(config-if)#
+Switch(config-if)#switchport mode trunk
+Switch(config-if)#
+Switch(config-if)#
+Switch(config)#
+Switch(config)#vtp version 2
+VTP mode already in V2.
+Switch(config)#vtp mode client
+Setting device to VTP CLIENT mode.
+Switch(config)#vtp domain nomanisp.net
+Domain name already set to nomanisp.net.
+Switch(config)#
+Switch(config)#
+Switch(config)#vtp password cisco
+Setting device VLAN database password to cisco
+Switch(config)#
+Switch(config)#do show vlan
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5, Fa0/6, Fa0/7, Fa0/8
+                                                Fa0/9, Fa0/10, Fa0/11, Fa0/12
+                                                Fa0/13, Fa0/14, Fa0/15, Fa0/16
+                                                Fa0/17, Fa0/18, Fa0/19, Fa0/20
+                                                Fa0/21, Fa0/22, Fa0/23, Fa0/24
+                                                Gig0/2
+10   Sales-LAN                        active    
+20   IT-LAN                           active    
+30   HR-LAN                           active    
+40   PHONE-LAN                        active    
+50   Management-LAN                   active    
+60   Marketing-LAN                    active    
+70   RND-LAN                          active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+
+ --More-- 
