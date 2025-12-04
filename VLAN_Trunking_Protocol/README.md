@@ -2,7 +2,7 @@
 
 ## Objective
 
-- The main goals of this lab are:
+The main goals of this lab are:
 
 - Implement VLAN segmentation by creating multiple VLANs for different departments (Sales, IT, HR, Phone, Management, Marketing, R&D).
 
