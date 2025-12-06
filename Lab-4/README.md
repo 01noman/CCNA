@@ -1,8 +1,6 @@
-## IPv4 Addressing Using DHCP Server
+## LAB-4
 
-## 🎯 LAB-4
-
-TASK:
+## 🎯 Task
 - Set Hostname as R1,SW1,SW2,SW3,SW4
 - Configure IP and VLAN information as per below chart
    - VLAN 10: Slaes-LAN: 192.168.10.0/24
