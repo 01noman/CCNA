@@ -19,5 +19,5 @@ TASK:
 Cisco Packet Tracer lab Overview
 
 <p align="center">
-  <img src="Screenshot 2025-11-27 004606.png" width="800" />
+  <img src="Screenshot 2025-12-06 211523.png" width="800" />
 </p>
